@@ -1,0 +1,17 @@
+{
+  "name": "Markdown Preview",
+  "short_name": "Write and preview Readme code and make your documentation better",
+  "icons": [
+    {
+      "src": "https://banner2.cleanpng.com/20180330/gdw/kisspng-iphone-emoji-apple-ios-11-emojis-5abe1fe3470cf8.3253064115224094432911.jpg",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "description": "An online editor for writing and previewing readme code faster than ever",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#3A6CD9",
+  "theme_color": "#3A6CD9"
+}

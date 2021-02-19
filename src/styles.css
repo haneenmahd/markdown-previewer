@@ -164,6 +164,16 @@
   .editor-window-mac .top-bar p {
     font-size: 11px;
   }
+  
+  .not-visible {
+    visibility: hidden;
+    display: none;
+  }
+
+  .fullscreen {
+    height: 100vh;
+    width: 100vw;
+  }
 }
 
 @media screen and (width: 620px) {
