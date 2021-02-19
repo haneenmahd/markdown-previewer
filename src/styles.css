@@ -152,9 +152,15 @@
     width: 90%;
     height: calc(calc(100vh / 2) - 20px);
   }
+
+  .editor {
+    max-height: 80%;
+  }
+
   .editor-window-mac .top-bar {
     padding-right: calc(calc(50% / 2) - 58px);
   }
+
   .editor-window-mac .top-bar p {
     font-size: 11px;
   }
