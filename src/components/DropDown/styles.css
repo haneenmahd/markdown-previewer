@@ -1,0 +1,61 @@
+.dropdown-container {
+    visibility: hidden;
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    max-height: 309px;
+    height: auto;
+    opacity: 0;
+    transform: translate(0%, 100%);
+    /* 
+    Default:
+    width: 233px;
+    max-height: 309px;
+    height: auto; 
+    */
+
+    background: rgba(255, 255, 255, 0.6);
+
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0;
+    overflow: hidden;
+    transition: transform 0.25s, visibility 0.25s, opacity 0.25s;
+}
+
+.drop-open {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0% ,0%);
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2px 20px;
+    width: 100%;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    margin: 4px 0px;
+    cursor: default;
+}
+.option:hover {
+    color: #fff;
+    background: #3a6cd9;
+}

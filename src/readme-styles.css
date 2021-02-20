@@ -1,3 +1,10 @@
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
 pre {
     background: #fff;
     padding: 10px;
@@ -7,4 +14,31 @@ pre {
 
 table {
     background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #166edc;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+ul, ol {
+    padding: 5px 10px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 5px 10px;
+}
+
+code {
+    display: flex;
+    overflow: scroll;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    word-wrap: break-word;
 }
