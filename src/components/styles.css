@@ -1,0 +1,26 @@
+.autocomplete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 233px;
+    height: 309px;
+    left: 12px;
+    top: 26px;
+
+    background: rgba(255, 255, 255, 0.6);
+
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+    box-shadow: 0 020px rgba(0, 0, 0, 0.15);
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0;
+}

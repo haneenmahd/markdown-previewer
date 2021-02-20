@@ -1,15 +1,14 @@
 import React from "react";
 import marked from "marked";
+import AutoComplete from "./components/autoComplete";
 import "./styles.css";
+import "./readme-styles.css";
 
 marked.setOptions({
   breaks: true
 });
 
 const renderer = new marked.Renderer();
-renderer.link = function (href, text) {
-  return `<a target="_blank" href="${href}">${text}</a>`;
-};
 const placeholder = `# Welcome to my React Markdown Previewer!
 
 ## This is a sub-heading...
@@ -127,6 +126,7 @@ export default class App extends React.Component {
             suppressContentEditableWarning
           >
             {this.props.value}
+            <AutoComplete />
           </textarea>
         </div>
         <div

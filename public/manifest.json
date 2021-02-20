@@ -3,9 +3,9 @@
   "short_name": "Write and preview Readme code and make your documentation better",
   "icons": [
     {
-      "src": "https://banner2.cleanpng.com/20180330/gdw/kisspng-iphone-emoji-apple-ios-11-emojis-5abe1fe3470cf8.3253064115224094432911.jpg",
+      "src": "logo.png",
       "type": "image/png",
-      "sizes": "16x16"
+      "sizes": "26x26"
     }
   ],
   "description": "An online editor for writing and previewing readme code faster than ever",
