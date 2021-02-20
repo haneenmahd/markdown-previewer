@@ -9,8 +9,8 @@
     }
   ],
   "description": "An online editor for writing and previewing readme code faster than ever",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/source='homescreen'"",
+  "scope": "/s/",
   "display": "standalone",
   "background_color": "#3A6CD9",
   "theme_color": "#3A6CD9"
