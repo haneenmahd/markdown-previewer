@@ -97,8 +97,8 @@
   background: #1E1E1E;
 }
 
-.editor-window-mac > .top-bar.preview {
-  padding-right: calc(50% / 2);
+.editor-window-mac .top-bar.preview {
+  justify-content: space-between;
 }
 
 .editor-window-mac .top-bar #add-icon {
@@ -136,12 +136,14 @@
   color: #fafafa;
 }
 
+/* box-shadow of input element #3a6cd9 */
+
 .editor-window-mac .top-bar input:focus {
-  box-shadow: 0 0 0 2.5px #3a6cd950;
+  box-shadow: 0 0 0 2.5px rgba(51, 113, 247, 0.5);
 }
 
 .editor-window-mac .top-bar.dark input:focus {
-  box-shadow: #3A6CD9 50%;
+  box-shadow: rgba(51, 113, 247, 0.5);
 }
 
 .editor-window-mac .top-bar p {
@@ -201,7 +203,7 @@
 .editor,
 .preview {
   height: 100%;
-  max-height: 90%;
+  max-height: 80%;
   width: 100%;
   overflow: scroll;
   outline: none;
@@ -216,6 +218,7 @@
 }
 
 .preview {
+  max-height: 100%;
   padding: 10px 20px;
 }
 
@@ -229,6 +232,7 @@
 
 .App.App.dark .switch-container p {
   color: #fafafa;
+  transition: color 0.3s;
 }
 
 .theme-toggle {
@@ -268,6 +272,7 @@
 @media screen and (max-width: 550px) {
   .workspace {
     flex-direction: column;
+    min-height: 100vh;
   }
 
   .editor-window-mac {
@@ -297,7 +302,14 @@
     width: 100vw;
   }
   .editor-window-mac .top-bar.preview {
-    padding-right: calc(calc(50% / 2) - 70px);
+    justify-content: space-around;
+    padding-right: calc(calc(50% / 2) - 40px);
+  }
+}
+
+@media screen and (max-width: 550px) and (orientation: landscape) {
+  .editor {
+    max-height: 70%;
   }
 }
 
