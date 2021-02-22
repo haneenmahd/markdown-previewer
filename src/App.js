@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import { DropDown } from "./components/DropDown/dropdown";
+import { DropDown } from "./components/DropDown";
 import "./styles.css";
 import "./readme-styles.css";
 
@@ -37,7 +37,7 @@ There's also [links](https://www.freecodecamp.com), and
 And if you want to get really crazy, even tables:
 
 Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
+------------- | ------------- | -------------
 Your content can | be here, and it | can be here....
 And here. | Okay. | I think we get it.
 
@@ -60,12 +60,14 @@ export default class App extends React.Component {
 
     this.state = {
       markdown: placeholder,
+      isDark: false,
       editorMaximized: false,
       previewMaximized: false,
       fileName: "Hello World.md",
       isDropOpen: true
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleTheme = this.handleTheme.bind(this);
     this.handleEditorMaximized = this.handleEditorMaximized.bind(this);
     this.handlePreviewMaximized = this.handlePreviewMaximized.bind(this);
     this.handleFileName = this.handleFileName.bind(this);
@@ -82,6 +84,11 @@ export default class App extends React.Component {
         isDropOpen: false
       });
     }
+  }
+  handleTheme() {
+    this.setState({
+      isDark: !this.state.isDark
+    });
   }
   handleChange(e) {
     this.setState({
@@ -122,7 +129,8 @@ export default class App extends React.Component {
     } 
   render() {
     return (
-      <div className="App">
+      <div className={`App ${this.state.isDark ? "dark": null}`}>
+        <div className="workspace">
         <div
           onClick={this.handleDropDown}
           className={`editor-window-mac ${
@@ -131,8 +139,7 @@ export default class App extends React.Component {
               : this.state.previewMaximized
               ? "not-visible"
               : null
-          }`}
-        >
+          } ${this.state.isDark ? "dark": null}`}>
           <DropDown isOpen={this.state.isDropOpen ? true : false}>
             <div onClick={() => this.handleDropSelect("h1")} className="option">Add a Header</div>
             <div onClick={() => this.handleDropSelect("p")} className="option">Add a paragraph</div>
@@ -141,14 +148,13 @@ export default class App extends React.Component {
             <div onClick={() => this.handleDropSelect("img", null, null)} className="option">Add a Image</div>
             <div onClick={() => this.handleDropSelect("style", null, "h1 { text-align: center; }")} className="option">Add custom styling</div>
           </DropDown>
-          <div className="top-bar">
+          <div className={`top-bar ${this.state.isDark ? "dark": null}`}>
             <div className="icons">
               <div className="icon close"></div>
               <div className="icon minimize"></div>
               <div
                 onClick={this.handleEditorMaximized}
-                className="icon maximize"
-              ></div>
+                className="icon maximize"></div>
             </div>
             <input
               placeholder="Enter a file name"
@@ -167,8 +173,7 @@ export default class App extends React.Component {
             value={this.state.markdown}
             className="editor"
             contentEditable
-            suppressContentEditableWarning
-          >
+            suppressContentEditableWarning>
             {this.props.value}
           </textarea>
           </label>
@@ -179,17 +184,16 @@ export default class App extends React.Component {
               ? "not-visible"
               : this.state.previewMaximized
               ? "fullscreen"
+              : this.state.isDark ? "dark"
               : null
-          }`}
-        >
-          <div className="top-bar preview">
+          } ${this.state.isDark ? "dark": null}`}>
+          <div className={`top-bar preview ${this.state.isDark ? "dark": null}`}>
             <div className="icons">
               <div className="icon close"></div>
               <div className="icon minimize"></div>
               <div
                 onClick={this.handlePreviewMaximized}
-                className="icon maximize"
-              ></div>
+                className="icon maximize"></div>
             </div>
             <p>Preview</p>
           </div>
@@ -200,8 +204,14 @@ export default class App extends React.Component {
               })
             }}
             id="preview"
-            className="preview"
-          ></div>
+            className="preview"></div>
+        </div>
+        </div>
+        <div className="switch-container">
+          <div className={`theme-toggle ${this.state.isDark ? "enabled" : null}`}>
+             <div onClick={this.handleTheme} className={`switch ${this.state.isDark ? "enabled" : null}`}></div>
+          </div>
+          <p>Switch Theme to {this.state.isDark ? <strong>Light</strong> : <strong>Dark</strong>}</p>
         </div>
       </div>
     );

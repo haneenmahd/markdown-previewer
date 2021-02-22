@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+    width: 15px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -10,6 +20,11 @@ pre {
     padding: 10px;
     border-radius: 10px;
     margin: 5px 0;
+}
+
+pre.dark {
+    background: #0C0F12;
+    color: #ebebebaa;
 }
 
 table {
