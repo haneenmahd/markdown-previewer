@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import { DropDown } from "./components/DropDown";
+import { DropDown } from "./components/dropdown";
 import "./styles.css";
 import "./readme-styles.css";
 
@@ -63,7 +63,7 @@ export default class App extends React.Component {
       isDark: false,
       editorMaximized: false,
       previewMaximized: false,
-      fileName: "Hello World.md",
+      fileName: "👋🏻New Comer.md",
       isDropOpen: true
     };
     this.handleChange = this.handleChange.bind(this);
@@ -110,8 +110,8 @@ export default class App extends React.Component {
       fileName: e.target.value
     });
   }
-  handleDropSelect(element, subElement, text="Change this text", src="https://www.gannett-cdn.com/presto/2018/12/15/USAT/2e7b9863-85ac-4faa-aad3-096fc1826c20-GettyImages-841647034.jpg") {
-    if (element !== "img") {
+  handleDropSelect(element, subElement, text="Change this text", src="https://www.gannett-cdn.com/presto/2018/12/15/USAT/2e7b9863-85ac-4faa-aad3-096fc1826c20-GettyImages-841647034.jpg", placeholder="TextField:") {
+    if (element !== "img" && element !== "input") {
      if (subElement) {
       this.setState({
         markdown: this.state.markdown + `<${element}><${subElement}>${text}</${subElement}></${element}> \n`
@@ -125,12 +125,16 @@ export default class App extends React.Component {
        this.setState({
          markdown: this.state.markdown + `<${element} alt="readme-image" src="${src}" /> \n`
        });
+     } else if (element === "input") {
+       this.setState({
+         markdown: this.state.markdown + `<${element} placeholder="${placeholder}" type="text" /> \n`
+       });
      }
     } 
   render() {
     return (
       <div className={`App ${this.state.isDark ? "dark": null}`}>
-        <div className="workspace">
+       <div className="workspace">
         <div
           onClick={this.handleDropDown}
           className={`editor-window-mac ${
@@ -146,6 +150,8 @@ export default class App extends React.Component {
             <div onClick={() => this.handleDropSelect("ul", "li")} className="option">Add a unordered list</div>
             <div onClick={() => this.handleDropSelect("ol", "li")} className="option">Add a ordered list</div>
             <div onClick={() => this.handleDropSelect("img", null, null)} className="option">Add a Image</div>
+            <div onClick={() => this.handleDropSelect("button", null, "Button")} className="option">Add a Button</div>
+            <div onClick={() => this.handleDropSelect("input")} className="option">Add a TextField</div>
             <div onClick={() => this.handleDropSelect("style", null, "h1 { text-align: center; }")} className="option">Add custom styling</div>
           </DropDown>
           <div className={`top-bar ${this.state.isDark ? "dark": null}`}>
@@ -192,6 +198,7 @@ export default class App extends React.Component {
               <div className="icon close"></div>
               <div className="icon minimize"></div>
               <div
+                onTouchMove={() => console.log("touch started!")}
                 onClick={this.handlePreviewMaximized}
                 className="icon maximize"></div>
             </div>

@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 
 * {
   padding: 0;
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "SF Pro Text", sans-serif;
   box-sizing: border-box;
 }
 
@@ -23,11 +22,15 @@
   width: 100vw;
   font-family: "Inter", sans-serif;
   background: #ebebeb;
-  transition: background 0.35s;
+  transition: background 0.35s;         
+}
+
+textarea {
+  resize: none;
 }
 
 .App.dark {
-  background: #292929;
+  background: #191919;
 }
 
 /* Changing the readme dark-mode styles too */
@@ -196,16 +199,16 @@
 }
 
 .editor {
-  font-family: "Fira sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 18px;
 }
 
 .editor,
 .preview {
   height: 100%;
-  max-height: 80%;
+  max-height: 90%;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   outline: none;
   background: none;
   border: none;
@@ -217,9 +220,9 @@
   color: #ebebeb;
 }
 
-.preview {
+.editor-window-mac #preview {
   max-height: 100%;
-  padding: 10px 20px;
+  padding: 10px 20px 40px 20px;
 }
 
 .switch-container {
@@ -230,7 +233,20 @@
   padding: 0.5rem 1rem;
 }
 
+.switch-container p {
+  color: #353637;
+}
+
+.switch-container p strong {
+  color: #171718;
+}
+
 .App.App.dark .switch-container p {
+  color: #c5c5c5;
+  transition: color 0.3s;
+}
+
+.App.App.dark .switch-container p strong {
   color: #fafafa;
   transition: color 0.3s;
 }
@@ -307,7 +323,7 @@
   }
 }
 
-@media screen and (max-width: 550px) and (orientation: landscape) {
+@media screen and (max-height: 400px) and (orientation: landscape) {
   .editor {
     max-height: 70%;
   }
