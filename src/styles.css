@@ -29,6 +29,30 @@ textarea {
   resize: none;
 }
 
+.download-container {
+  text-align: center;
+}
+
+#btn-download {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2%;
+  min-width: 10rem;
+  height: 4rem;
+  outline: none;
+  border: none;
+  background:#3a6cd9;
+  transition: transform 0.35s;
+}
+
+#btn-download:active {
+  transform: scale(0.95);
+}
+
+.App.dark #btn-download {
+  color: #eeeeee;
+}
+
 .App.dark {
   background: #191919;
 }

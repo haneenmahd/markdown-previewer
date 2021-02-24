@@ -6,6 +6,8 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "apple-colors": "^1.0.7",
+    "js-file-download": "^0.4.12",
     "marked": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

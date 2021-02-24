@@ -3,6 +3,10 @@ import marked from "marked";
 import { DropDown } from "./components/dropdown";
 import "./styles.css";
 import "./readme-styles.css";
+import { fstat } from "fs";
+
+// File download feature
+const fileDownload = require("js-file-download");
 
 marked.setOptions({
   breaks: true
@@ -132,6 +136,21 @@ export default class App extends React.Component {
      }
     } 
   render() {
+    const readmeCode = () => {
+      const styles = require("./readme-styles.css");
+      const html = this.state.markdown;
+
+      return `
+             ${html}
+             <style>
+                ${styles}
+             </style>
+      `;
+    };
+    const handleCode = () => {
+      fileDownload(readmeCode(), `${this.state.fileName}`);
+    };
+    
     return (
       <div className={`App ${this.state.isDark ? "dark": null}`}>
        <div className="workspace">
@@ -219,6 +238,9 @@ export default class App extends React.Component {
              <div onClick={this.handleTheme} className={`switch ${this.state.isDark ? "enabled" : null}`}></div>
           </div>
           <p>Switch Theme to {this.state.isDark ? <strong>Light</strong> : <strong>Dark</strong>}</p>
+        </div>
+        <div className="download-container">
+           <button id="btn-download" onClick={() => handleCode()}>Download File</button>
         </div>
       </div>
     );
