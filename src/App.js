@@ -141,10 +141,122 @@ export default class App extends React.Component {
       const html = this.state.markdown;
 
       return `
-             ${html}
-             <style>
-                ${styles}
-             </style>
+${html}
+<style>
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+pre {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+table {
+    padding: 10px;
+    height: 30%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 10px;
+}
+
+table thead tr {
+    height: 40px;
+    width: calc(100% / 4);
+}
+
+table thead tr th {
+    text-align: center;
+    margin: 0 3px;
+    font-size: 1.1rem;
+}
+
+table tbody tr td {
+    text-align: center;
+    margin: 0 3px;
+    font-size: 0.912rem;
+    font-weight: 600;
+    color: #575757;
+}
+
+a {
+    text-decoration: none;
+    color: #166edc;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+ul, ol {
+    padding: 5px 10px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 5px 10px;
+}
+
+code {
+    display: flex;
+    overflow: scroll;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+input {
+    overflow: hidden;
+    min-width: 70%;
+    text-align: left;
+    padding: 0 10px;
+    line-height: 1.5rem;
+    height: 2rem;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
+    font-size: 13px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    transition: box-shadow 0.35s;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2.5px rgba(51, 113, 247, 0.5);
+}
+
+button {
+    overflow: hidden;
+    min-width: 70%;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.5rem;
+    height: 2rem;
+    overflow: hidden;
+    background: #166edc;
+    color: #fafafa;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    transition: box-shadow 0.35s;
+}
+
+button:focus {
+    box-shadow: 0 0 0 3.5px rgba(51, 113, 247, 0.3);
+}
+</style>
       `;
     };
     const handleCode = () => {

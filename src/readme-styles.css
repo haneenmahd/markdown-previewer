@@ -1,13 +1,3 @@
-::-webkit-scrollbar {
-    width: 15px;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 30px;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -85,10 +75,6 @@ code {
     flex-wrap: wrap;
     width: 100%;
     word-wrap: break-word;
-}
-
-code .comment {
-    color: #aba9a9;
 }
 
 input {
