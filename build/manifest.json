@@ -5,7 +5,7 @@
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "26x26"
+      "sizes": "50x50"
     }
   ],
   "description": "An online editor for writing and previewing readme code faster than ever",
