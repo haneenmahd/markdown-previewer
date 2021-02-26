@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import { DropDown } from "./components/dropdown";
+import { DropDown } from "./Components/DropDown";
 import "./styles.css";
 import "./readme-styles.css";
 import { fstat } from "fs";
