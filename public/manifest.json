@@ -5,11 +5,11 @@
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "50x50"
+      "sizes": "820x725"
     }
   ],
   "description": "An online editor for writing and previewing readme code faster than ever",
-  "start_url": "/",
+  "start_url": ".",
   "scope": "/",
   "display": "standalone",
   "background_color": "#3A6CD9",

@@ -223,7 +223,7 @@ textarea {
 }
 
 .editor {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "SF Mono", sans-serif;
   font-size: 18px;
 }
 
@@ -278,7 +278,7 @@ textarea {
 .theme-toggle {
   display: flex;
   align-items: center;
-  padding: 0 3px;
+  padding: 3px;
   overflow: hidden;
   height: calc(22px * 1.15);
   width: calc(40px * 1.15);
@@ -293,9 +293,9 @@ textarea {
 }
 
 .theme-toggle .switch {
+  margin-top: 0.5px;
   height: 20px;
   width: 20px;
-  border-radius: 0px;
   background: #FFFFFF;
   box-shadow: 0px 0.5px 4px 0px #000000 20%;
   border-radius: 100px;

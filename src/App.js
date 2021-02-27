@@ -3,7 +3,6 @@ import marked from "marked";
 import { DropDown } from "./components/dropdown";
 import "./styles.css";
 import "./readme-styles.css";
-import { fstat } from "fs";
 
 // File download feature
 const fileDownload = require("js-file-download");
@@ -13,7 +12,7 @@ marked.setOptions({
 });
 
 const renderer = new marked.Renderer();
-const placeholder = `# Welcome to my React Markdown Previewer!
+const placeholder = `# Welcome to my Markdown Previewer!
 
 ## This is a sub-heading...
 ### And here's some other cool stuff:
@@ -294,6 +293,7 @@ button:focus {
                 className="icon maximize"></div>
             </div>
             <input
+              id="filename-input"
               placeholder="Enter a file name"
               type="text"
               onChange={this.handleFileName}
@@ -329,7 +329,6 @@ button:focus {
               <div className="icon close"></div>
               <div className="icon minimize"></div>
               <div
-                onTouchMove={() => console.log("touch started!")}
                 onClick={this.handlePreviewMaximized}
                 className="icon maximize"></div>
             </div>
