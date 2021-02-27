@@ -1,5 +1,6 @@
 # Markdown-previewer
 Write some GitHub flavoured readme code and Get live preview and make your documentation better.
+[![CodeQL](https://github.com/haneenmahd/markdown-previewer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/haneenmahd/markdown-previewer/actions/workflows/codeql-analysis.yml)
 
 [Website](https://markdown-prev.netlify.app)
 
