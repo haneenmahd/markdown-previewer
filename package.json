@@ -9,7 +9,7 @@
     "@splitbee/web": "^0.2.4",
     "apple-colors": "^1.0.7",
     "js-file-download": "^0.4.12",
-    "marked": "^2.0.0",
+    "marked": "^2.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.3"
