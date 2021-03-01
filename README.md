@@ -16,36 +16,4 @@ By default, The file would download as **👋🏻New Comer .md**
 - The Add Button - The add button provides a solution to add element and other things in to your code.
 
 # License
-<<<<<<< HEAD
 Markdown previewer is licensed under MIT.
-=======
-Markdown previewer is licensed under MIT.
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    font-family: "Inter", sans-serif;
-}
-
-h1 {
-    font-weight: 700;
-}
-
-h2 {
-    font-weight: 600;
-}
-
-h3 {
-    font-weight: 500;
-}
-
-h4 {
-    font-weight: 400;
-}
-
-h5 {
-    font-weight: 300;
-}
-</style>
->>>>>>> 3ef5ec9bbca1f969641992fbe0a0ee1cf5502091
