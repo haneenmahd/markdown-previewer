@@ -1,5 +1,8 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
+import splitbee from '@splitbee/web';
+
+splitbee.init();
 
 import App from "./App";
 
