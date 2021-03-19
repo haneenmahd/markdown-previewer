@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import { DropDown } from "./components/Dropdown";
+import { DropDown } from "./components/dropdown";
 import "./styles.css";
 import "./readme-styles.css";
 
