@@ -6,17 +6,8 @@ img {
 }
 
 pre {
-    background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px 0;
+    background: none;
 }
-
-pre.dark {
-    background: #0C0F12;
-    color: #ebebebaa;
-}
-
 table {
     padding: 10px;
     height: 30%;
@@ -75,6 +66,14 @@ code {
     flex-wrap: wrap;
     width: 100%;
     word-wrap: break-word;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.App.dark code {
+    background-color: #0C0F12;
 }
 
 input {

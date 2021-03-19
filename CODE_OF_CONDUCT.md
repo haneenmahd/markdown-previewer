@@ -48,6 +48,9 @@ threatening, offensive, or harmful.
 - The package file such as package.json and package-lock.json should not be changed.
 - You should not commit a `build/` folder
 - Ignoring log files
-- Never make the package weigh more than > 200KB - It's the maximum that shall be considered :)
+- New ideas and Features💡
+- Auto Completion
+- Text Colorizing 
+- Fast and easy to use
 
 [homepage]: https://markdown-prev.netlify.app
