@@ -6,7 +6,6 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@haneenmahd/responsive-web": "^1.0.4",
     "@splitbee/web": "^0.2.4",
     "apple-colors": "^1.0.7",
     "js-file-download": "^0.4.12",
