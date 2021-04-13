@@ -1,5 +1,5 @@
 .dropdown-container {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
     right: 15px;
     top: 40px;
@@ -10,7 +10,7 @@
     height: auto;
     max-width: 100%;
     width: 210px;
-    transform: scale(0);
+    transform: scale(1);
     background: rgba(255, 255, 255, 0.6);
     border: 0.5px solid rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
@@ -21,13 +21,13 @@
     flex-grow: 0;
     margin: 10px 0;
     overflow: scroll;
-    transition: transform 0.20s cubic-bezier(0.075, 0.82, 0.165, 1), visibility 0.25s;
+    transition: transform 0.20s, visibility 0.25s;
 }
 
-.drop-open {
+.drop-close {
     height: auto;
-    visibility: visible;
-    transform: scale(1);
+    visibility: hidden;
+    transform: scale(0);
 }
 
 .option {
