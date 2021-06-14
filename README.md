@@ -1,10 +1,10 @@
 # Markdown-previewer
 Write some GitHub flavoured readme code and Get live preview and make your documentation better.
 
-[![CodeQL](https://github.com/haneenmahd/markdown-previewer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/haneenmahd/markdown-previewer/actions/workflows/codeql-analysis.yml)
-[![Node.js CI](https://github.com/haneenmahd/markdown-previewer/actions/workflows/node.js.yml/badge.svg)](https://github.com/haneenmahd/markdown-previewer/actions/workflows/node.js.yml)
+[![CodeQL](https://github.com/haneenmahd/pen-down/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/haneenmahd/markdown-previewer/actions/workflows/codeql-analysis.yml)
+[![Node.js CI](https://github.com/haneenmahd/pen-down/actions/workflows/node.js.yml/badge.svg)](https://github.com/haneenmahd/markdown-previewer/actions/workflows/node.js.yml)
 
-[Website](https://markdown-prev.netlify.app)
+[Website](https://pen-down.netlify.app)
 
 ![Overview](./readme-images/overview.png)
 
