@@ -1,6 +1,6 @@
 import React from "react";
 import marked from "marked";
-import DropDown from "./components/Dropdown/index";
+import DropDown from "./components/DropDown/index";
 import AutoCompletion from "./components/AutoCompletion";
 import Button from "./components/Button";
 import "./styles.css";
