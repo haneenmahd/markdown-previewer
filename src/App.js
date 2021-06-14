@@ -1,6 +1,8 @@
 import React from "react";
 import marked from "marked";
-import { DropDown } from "./components/DropDown";
+import DropDown from "./components/Dropdown/index";
+import AutoCompletion from "./components/AutoCompletion";
+import Button from "./components/Button";
 import "./styles.css";
 import "./readme-styles.css";
 
@@ -71,6 +73,7 @@ export default class App extends React.Component {
       fileName: "👋🏻Asset.md",
       isDropOpen: true
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleTheme = this.handleTheme.bind(this);
     this.handleEditorMaximized = this.handleEditorMaximized.bind(this);
@@ -79,6 +82,7 @@ export default class App extends React.Component {
     this.handleDropDown = this.handleDropDown.bind(this);
     this.handleDropSelect = this.handleDropSelect.bind(this);
   }
+
   handleDropDown(e) {
     if (e.target.id === "add-icon") {
       this.setState({
@@ -90,31 +94,37 @@ export default class App extends React.Component {
       });
     }
   }
+
   handleTheme() {
     this.setState({
       isDark: !this.state.isDark,
     });
   }
+
   handleChange(e) {
     this.setState({
       markdown: e.target.value
     });
   }
+
   handleEditorMaximized() {
     this.setState({
       editorMaximized: !this.state.editorMaximized,
     });
   }
+
   handlePreviewMaximized() {
     this.setState({
       previewMaximized: !this.state.previewMaximized,
     });
   }
+
   handleFileName(e) {
     this.setState({
       fileName: e.target.value,
     });
   }
+
   handleDropSelect(
     element,
     subElement,
@@ -148,6 +158,7 @@ export default class App extends React.Component {
       });
     }
   }
+
   render() {
     const readmeCode = () => {
       const html = this.state.markdown;
@@ -397,61 +408,39 @@ button:focus {
               >
               </textarea>
             </label>
+            <AutoCompletion
+              theme={this.state.isDark === false ? 'dark' : 'light'}
+              snippets={[
+                {
+                  name: 'Header',
+                  definition: 'A title for your Markdown'
+                },
+                {
+                  name: 'Paragraph',
+                  definition: 'A small paragraph for your Markdown'
+                }
+              ]}
+              source={this.state.markdown}
+            />
           </div>
-          <div
-            className={`editor-window-mac ${this.state.editorMaximized
-              ? "not-visible"
-              : this.state.previewMaximized
-                ? "fullscreen"
-                : this.state.isDark
-                  ? "dark"
-                  : null
-              } ${this.state.isDark ? "dark" : null}`}
-          >
+          <div className="switch-container">
             <div
-              className={`top-bar preview ${this.state.isDark ? "dark" : null}`}
+              className={`theme-toggle ${this.state.isDark ? "enabled" : null}`}
             >
-              <div className="icons">
-                <div className="icon close"></div>
-                <div className="icon minimize"></div>
-                <div
-                  onClick={this.handlePreviewMaximized}
-                  className="icon maximize"
-                ></div>
-              </div>
-              <p>Preview</p>
+              <div
+                onClick={this.handleTheme}
+                className={`switch ${this.state.isDark ? "enabled" : null}`}
+              ></div>
             </div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: marked(this.state.markdown, {
-                  renderer: renderer,
-                }),
-              }}
-              id="preview"
-              className="preview"
-            ></div>
+            <p>
+              Switch Theme to
+              {this.state.isDark ? <strong> Light</strong> : <strong> Dark</strong>}
+            </p>
+          </div>
+          <div className="download-container">
+            <Button text="Download File" preference="primary" onClick={() => handleCode()} />
           </div>
         </div>
-        <div className="switch-container">
-          <div
-            className={`theme-toggle ${this.state.isDark ? "enabled" : null}`}
-          >
-            <div
-              onClick={this.handleTheme}
-              className={`switch ${this.state.isDark ? "enabled" : null}`}
-            ></div>
-          </div>
-          <p>
-            Switch Theme to{" "}
-            {this.state.isDark ? <strong>Light</strong> : <strong>Dark</strong>}
-          </p>
-        </div>
-        <div className="download-container">
-          <button className="btn" onClick={() => handleCode()}>
-            Download File
-          </button>
-        </div>
-        {/* <Footer /> */}
       </div>
     );
   }

@@ -2,7 +2,7 @@
   "name": "markdown-previewer",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Write some Github Flavoured Readme Code and Get live preview",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -12,7 +12,8 @@
     "marked": "^2.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,5 +26,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": "https://github.com/haneenmahd/markdown-previewer.git",
+  "author": "Haneen Mahdin <haneenmahdin@gmail.com>",
+  "license": "MIT"
 }

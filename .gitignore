@@ -1,3 +1,4 @@
 *.ini
 node_modules
 build
+*.temp
