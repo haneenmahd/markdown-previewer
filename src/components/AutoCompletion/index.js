@@ -6,15 +6,17 @@ import styled from 'styled-components';
  */
 
 const Container = styled.div`
+  position: relative;
   max-height: 100%;
+  min-height: 70px;
   width: 50%;
   border-radius: 9px;
   box-shadow: ${props => props.theme === 'light' ? '4px 7.5px 20px 0 #00000030' : '4px 7.5px 20px 0 #00000010'};
   position: absolute;
   background:${props => props.theme === 'light' ? '#191919' : '#fff'};
-  padding: 0px 0;
+  padding-bottom: 20px;
   top: 20%;
-  right: 5%;
+  right: 10%;
   overflow: hidden;
   transition: 0.25s;
   display: ${props => props.display};
@@ -32,42 +34,31 @@ const Snippet = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding-left: 30px;
+  padding-bottom: 40px;
   & .active {
       background: #166edc;
       color: #fff;
   }
 `;
 
-/**
- * 
- * @param {string} value Value to test
- * @param {RegExp} regex Pattern to match
- * @return {boolean} Returns if it matches or not
- */
-const matches = (value, regex) => {
-    if (regex.test(value)) {
+const SnippetDefenition = styled.div`
+  height: auto;
+  min-height: 18px;
+  border-top: 0.5px solid #c4c4c4aa;
+  background-color: #c4c4c430;
+  padding: 2.5px 0px 4.5px 20px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: #111111aa;
+`;
+
+function validateRegex(regex) {
+    try {
+        new RegExp(regex);
         return true;
-    } else {
+    } catch (e) {
         return false;
-    }
-}
-
-class SnippetLayout extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = props;
-    }
-
-    render() {
-        const { snippets } = this.props;
-
-        return (
-            snippets.map((snip, i) => (
-                <Snippet key={i}>
-                    {snip.name}
-                </Snippet>
-            ))
-        );
     }
 }
 
@@ -81,7 +72,8 @@ class AutoCompletion extends React.Component {
 
         this.props = props;
         this.state = {
-            shouldRemainOpen: false
+            shouldRemainOpen: false,
+            activeSnippet: this.props.snippets[0]
         };
 
         this.handleState = this.handleState.bind(this);
@@ -104,16 +96,27 @@ class AutoCompletion extends React.Component {
 
         activeWord = activeWord[activeWord.length - 1];
 
-        let activeRegex = new RegExp(activeWord, 'gi');
+        activeWord = activeWord.replace(/(\\)|(\*)|(\))|(\()/gi, '');
+        var activeRegex = validateRegex(new RegExp(activeWord, 'g')) === true ? new RegExp(activeWord, 'g') : new RegExp('\w+', 'g');
 
         return (
-            <Container display={this.state.shouldRemainOpen ? 'inherit' : 'none'} theme={theme}>
-                {console.log('Test of pattern: word ->', snippets[0].name, ',', 'with regex', activeRegex)}
-                {console.log(activeRegex.test(snippets[0].name))}
-                {/**<SnippetLayout snippets={snippets} />*/}
+            <Container display={this.state.shouldRemainOpen ? 'inherit' : 'flex'} theme={theme}>
+                {snippets.map((snip, i) => (
+                    activeRegex.test(snip.name) ?
+                        <>
+                            <Snippet key={i}>{snip.name}</Snippet>
+                            <SnippetDefenition key={snip.name}>{snip.definition}</SnippetDefenition>
+                        </> : ''
+                ))}
             </Container>
         );
     }
 }
+
+/**
+ * Testing
+ * console.log('Test of pattern: word ->', snip.name, ',', 'with regex', activeRegex)
+                    console.log(activeRegex.test(snip.name) ? `Does match: ${snip.name}` : `Does not match: ${snip.name}`)
+ */
 
 export default AutoCompletion;
