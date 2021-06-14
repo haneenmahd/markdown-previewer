@@ -97,7 +97,7 @@ class AutoCompletion extends React.Component {
         activeWord = activeWord[activeWord.length - 1];
 
         activeWord = activeWord.replace(/(\\)|(\*)|(\))|(\()/gi, '');
-        var activeRegex = validateRegex(new RegExp(activeWord, 'g')) === true ? new RegExp(activeWord, 'g') : new RegExp('\w+', 'g');
+        var activeRegex = validateRegex(new RegExp(activeWord, 'g')) === true ? new RegExp(activeWord, 'g') : new RegExp('[a-][A-Z]', 'g');
 
         return (
             <Container display={this.state.shouldRemainOpen ? 'inherit' : 'flex'} theme={theme}>
